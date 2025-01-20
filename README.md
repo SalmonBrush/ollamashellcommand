@@ -1,6 +1,7 @@
 # OllamaShellCommand 🦙
 **OllamaShellCommand** is a command-line utility powered by the Ollama LLM model that generates macOS Zsh/Bash commands based on natural language descriptions. You can use this tool to quickly generate and execute complex shell commands without needing to manually craft them. Just describe your task, and OllamaShellCommand will give you the right command to run.
-![Alt text]([path/to/your/gif.gif](https://ibb.co/7Jbvw9t))
+![usage_gif](https://ibb.co/7Jbvw9t)
+
 ## Features
 
 - **Natural Language Processing**: Generate Zsh/Bash commands by simply describing the task in natural language.
