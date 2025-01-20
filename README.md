@@ -43,6 +43,6 @@ max_tokens = 150
 temperature = 0.7
 num_predict = 50
 ```
-
+##
 I would love to see this project grow and become better so any contributions is as always much appreciated.
 /Salmonbrush
