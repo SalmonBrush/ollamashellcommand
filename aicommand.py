@@ -21,7 +21,7 @@ def load_model_configuration(config_file: str = "model_config.txt"):
 
 # Function to generate Zsh command based on the task input
 def generate_zsh_command(task: str, model_params: dict):
-    prompt = f"""You are a command generator. You must provide the user with only the macOS Zsh/bash command that will accomplish the following task. Do not include any explanations, descriptions, or additional information.
+    prompt = f"""You are a command generator. You must provide the user with only the macOS Zsh/bash command that will accomplish the following task. Do not include any explanations, descriptions, or additional information or formatting like ```zsh ```shell or ```bash.
 
     Task: {task}
     Command:
@@ -54,13 +54,10 @@ if __name__ == "__main__":
 
     # Automatically load model configuration from the default file (model_config.txt)
     model_params = load_model_configuration()
-    print(f"[bold green]Model configuration loaded from model_config.txt[/bold green]")
 
     # Generate the Zsh command for the input task
     zsh_command = generate_zsh_command(task, model_params)
 
     # Print the generated Zsh command with colored output
     console = Console()
-    console.print(f"[bold blue]Task:[/bold blue] {task}", style="underline")
-    console.print(f"[bold yellow]Generated Zsh Command:[/bold yellow]")
-    console.print(f"[bold magenta]{zsh_command}[/bold magenta]", style="bold")
+    console.print(f"[bold green]{zsh_command}[/bold green]", style="bold")
