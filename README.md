@@ -23,7 +23,7 @@
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/ollamashellcommand.git
+git clone https://github.com/salmonbrush/ollamashellcommand.git
 cd ollamashellcommand
 ```
 
