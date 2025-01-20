@@ -1,11 +1,17 @@
+#!/usr/bin/env python3
+
 import argparse
 from langchain_ollama.llms import OllamaLLM
 from langchain.prompts import ChatPromptTemplate
 from rich import print
 from rich.console import Console
+import re
+import os
 
 # Function to read model configuration from a txt file
-def load_model_configuration(config_file: str = "model_config.txt"):
+def load_model_configuration(config_file: str = "~/ollamashellcommand/model_config.txt"):
+    # Expand the ~ to the full path
+    config_file = os.path.expanduser(config_file)
     with open(config_file, "r") as file:
         config_lines = file.readlines()
     
@@ -38,7 +44,11 @@ def generate_zsh_command(task: str, model_params: dict):
     # Generate the response from the model
     response = model.invoke(prompt)
     
-    return response.strip()
+    # Remove any occurrences of ```zsh, ```bash, and ```shell
+    cleaned_response = re.sub(r'```(zsh|bash|shell)\s*', '', response)
+    cleaned_response = re.sub(r'```', '', cleaned_response)
+    
+    return cleaned_response.strip()
 
 # Main function for command-line execution
 if __name__ == "__main__":
