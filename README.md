@@ -16,7 +16,9 @@
 
 - Python 3.10 or higher
 - `rich` library for styled console output
-- `Ollama` LLM model setup (requires access to Ollama API)
+- `Ollama` Local model setup
+- `Langchain` For interacting with Ollama
+
 
 ### Step 1: Clone the Repository
 
